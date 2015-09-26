@@ -1,0 +1,38 @@
+/* line 2, ../../src/sass/styles.scss */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* line 7, ../../src/sass/styles.scss */
+section {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 10, ../../src/sass/styles.scss */
+#scriptures {
+  width: 25vw;
+  height: 100%;
+  overflow: scroll;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 18, ../../src/sass/styles.scss */
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 22, ../../src/sass/styles.scss */
+ul.versesblock li {
+  position: relative;
+  display: block;
+  margin-bottom: .3em;
+}
