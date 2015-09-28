@@ -1,36 +1,113 @@
-/* line 2, ../../src/sass/styles.scss */
+/* line 7, ../../src/sass/styles.scss */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   height: 100vh;
-  width: 100vw;
+  max-width: 100%;
 }
 
-/* line 7, ../../src/sass/styles.scss */
-section {
+/* line 11, ../../src/sass/styles.scss */
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
 }
 
-/* line 10, ../../src/sass/styles.scss */
+/* line 15, ../../src/sass/styles.scss */
+section {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  max-width: 100%;
+}
+
+/* line 20, ../../src/sass/styles.scss */
 #scriptures {
-  width: 25vw;
-  height: 100%;
-  overflow: scroll;
-  z-index: 100;
   position: absolute;
   top: 0;
   left: 0;
+  height: auto;
+  min-height: auto;
+  background-color: white;
+  font-size: 2.8vw;
+  padding: 2.5vw 5vw;
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+  -moz-column-gap: 7vw;
+  -webkit-column-gap: 7vw;
+  column-gap: 7vw;
+  -moz-column-rule: 0.125em solid black;
+  -webkit-column-rule: 0.125em solid black;
+  column-rule: 0.125em solid black;
+  /*
+  	* Animation section *
+  */
+  -moz-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
+  z-index: 100;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10000);
+  opacity: 100;
+}
+/* line 37, ../../src/sass/styles.scss */
+#scriptures .chapterheading {
+  -moz-column-span: all;
+  -webkit-column-span: all;
+  column-span: all;
+}
+/* line 40, ../../src/sass/styles.scss */
+#scriptures .big {
+  font-size: 1.75em;
+}
+/* line 43, ../../src/sass/styles.scss */
+#scriptures .navheading, #scriptures .chapterheading {
+  text-align: center;
+  text-transform: uppercase;
+}
+/* line 47, ../../src/sass/styles.scss */
+#scriptures ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 50, ../../src/sass/styles.scss */
+#scriptures ul li {
+  text-align: justify;
+  text-indent: 0.5em;
+  -moz-page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+}
+/* line 63, ../../src/sass/styles.scss */
+#scriptures.hidden {
+  z-index: -1;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
 }
 
-/* line 18, ../../src/sass/styles.scss */
+/* line 69, ../../src/sass/styles.scss */
 #map {
   height: 100%;
   width: 100%;
 }
+/* line 72, ../../src/sass/styles.scss */
+#map .animate-label {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  display: block;
+  font-size: 2.8vw;
+  -moz-transition: all 2s ease-out;
+  -o-transition: all 2s ease-out;
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+  z-index: -1;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
 
-/* line 22, ../../src/sass/styles.scss */
+/* line 84, ../../src/sass/styles.scss */
 ul.versesblock li {
   position: relative;
   display: block;
