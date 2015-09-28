@@ -12,53 +12,73 @@ h1,h2,h3,h4,h5,h6 {
 	margin:0;padding:0;
 }
 
+body > svg {
+	display:none;
+}
+.shape path {
+    fill: blue;
+}
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	max-height:1em;
+	vertical-align: text-bottom;
+}
+
 section {
 	margin:0;padding:0;
+	height:100vh;
 	min-height:100%;
+	max-height:100%;
+	width:100vw;
+	min-width:100%;
 	max-width:100%;
+	overflow-y:scroll;
+	overflow-x:hidden;
 }
+
 #scriptures {
 	position: absolute;
-    top:0;
-    left:0;
-    height:auto;
-    min-height:auto;
-    width: calc(100% - 10vw);
-    
-    background-color:white;
-    
-    font-size:$scripture-font-height;
-    padding:#{$scripture-padding/2} $scripture-padding;
-    
-    @include column-count(2);
-    @include column-gap($scripture-column-gap);
-    //@include column-width(30vw);
-    @include column-rule(0.125em, solid, black);
-    
-    .chapterheading {
-    	@include column-span(all);
-    }
-    .big {
-    	font-size:1.75em;
-    }
-    .navheading,.chapterheading {
-    	text-align:center;
-    	text-transform: uppercase;
-    }
-    & ul {
-    	margin:0;padding:0;
-    	
-    	& li {
-    		text-align:justify;
-    		text-indent:0.5em;
-    		@include break-inside(avoid);
-    	}
-    }
-    
-    /*
-    	* Animation section *
-    */
-    @include transition(all 1s linear);
+	top:0;
+	left:0;
+	
+	& .scripturecontent {
+		background-color:white;
+		
+		font-size:$scripture-font-height;
+		padding:#{$scripture-padding/2} $scripture-padding;
+		
+		@include column-count(2);
+		@include column-gap($scripture-column-gap);
+		//@include column-width(30vw);
+		@include column-rule(0.125em, solid, black);
+		
+		.chapterheading {
+			@include column-span(all);
+		}
+		.big {
+			font-size:1.75em;
+		}
+		.navheading,.chapterheading {
+			text-align:center;
+			text-transform: uppercase;
+		}
+		& ul {
+			margin:0;padding:0;
+			
+			& li {
+				text-align:justify;
+				text-indent:0.5em;
+				@include break-inside(avoid);
+			}
+		}
+	}
+	
+	/*
+		* Animation section *
+	*/
+	@include transition(all 1s linear);
 	z-index:100;
 	@include opacity(100);
 	&.hidden {
@@ -76,14 +96,14 @@ section {
 		display:block;
 		font-size:$scripture-font-height;
 		
-	    @include transition(all 2s ease-out);
+		@include transition(all 2s ease-out);
 		z-index:-1;
 		@include opacity(0);
 	}
 }
 
 ul.versesblock li {
-    position: relative;
-    display: block;
-    margin-bottom: .3em;	
+	position: relative;
+	display: block;
+	margin-bottom: .3em;	
 }

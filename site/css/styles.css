@@ -14,21 +14,56 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* line 15, ../../src/sass/styles.scss */
+body > svg {
+  display: none;
+}
+
+/* line 18, ../../src/sass/styles.scss */
+.shape path {
+  fill: blue;
+}
+
+/* line 21, ../../src/sass/styles.scss */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  max-height: 1em;
+  vertical-align: text-bottom;
+}
+
+/* line 29, ../../src/sass/styles.scss */
 section {
   margin: 0;
   padding: 0;
+  height: 100vh;
   min-height: 100%;
+  max-height: 100%;
+  width: 100vw;
+  min-width: 100%;
   max-width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-/* line 20, ../../src/sass/styles.scss */
+/* line 41, ../../src/sass/styles.scss */
 #scriptures {
   position: absolute;
   top: 0;
   left: 0;
-  height: auto;
-  min-height: auto;
-  width: calc(100% - 10vw);
+  /*
+  	* Animation section *
+  */
+  -moz-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
+  z-index: 100;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10000);
+  opacity: 100;
+}
+/* line 46, ../../src/sass/styles.scss */
+#scriptures .scripturecontent {
   background-color: white;
   font-size: 2.8vw;
   padding: 2.5vw 5vw;
@@ -41,58 +76,48 @@ section {
   -moz-column-rule: 0.125em solid black;
   -webkit-column-rule: 0.125em solid black;
   column-rule: 0.125em solid black;
-  /*
-  	* Animation section *
-  */
-  -moz-transition: all 1s linear;
-  -o-transition: all 1s linear;
-  -webkit-transition: all 1s linear;
-  transition: all 1s linear;
-  z-index: 100;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10000);
-  opacity: 100;
 }
-/* line 38, ../../src/sass/styles.scss */
-#scriptures .chapterheading {
+/* line 57, ../../src/sass/styles.scss */
+#scriptures .scripturecontent .chapterheading {
   -moz-column-span: all;
   -webkit-column-span: all;
   column-span: all;
 }
-/* line 41, ../../src/sass/styles.scss */
-#scriptures .big {
+/* line 60, ../../src/sass/styles.scss */
+#scriptures .scripturecontent .big {
   font-size: 1.75em;
 }
-/* line 44, ../../src/sass/styles.scss */
-#scriptures .navheading, #scriptures .chapterheading {
+/* line 63, ../../src/sass/styles.scss */
+#scriptures .scripturecontent .navheading, #scriptures .scripturecontent .chapterheading {
   text-align: center;
   text-transform: uppercase;
 }
-/* line 48, ../../src/sass/styles.scss */
-#scriptures ul {
+/* line 67, ../../src/sass/styles.scss */
+#scriptures .scripturecontent ul {
   margin: 0;
   padding: 0;
 }
-/* line 51, ../../src/sass/styles.scss */
-#scriptures ul li {
+/* line 70, ../../src/sass/styles.scss */
+#scriptures .scripturecontent ul li {
   text-align: justify;
   text-indent: 0.5em;
   -moz-page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
   break-inside: avoid;
 }
-/* line 64, ../../src/sass/styles.scss */
+/* line 84, ../../src/sass/styles.scss */
 #scriptures.hidden {
   z-index: -1;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 
-/* line 70, ../../src/sass/styles.scss */
+/* line 90, ../../src/sass/styles.scss */
 #map {
   height: 100%;
   width: 100%;
 }
-/* line 73, ../../src/sass/styles.scss */
+/* line 93, ../../src/sass/styles.scss */
 #map .animate-label {
   position: absolute;
   top: 50vh;
@@ -108,7 +133,7 @@ section {
   opacity: 0;
 }
 
-/* line 85, ../../src/sass/styles.scss */
+/* line 105, ../../src/sass/styles.scss */
 ul.versesblock li {
   position: relative;
   display: block;
