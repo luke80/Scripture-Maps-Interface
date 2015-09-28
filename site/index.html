@@ -11,8 +11,14 @@
 <body>
 	<svg>
 		<defs>
-			<symbol id="shape-previous">
+			<symbol id="shape-previous" class="shape">
 				<path fill="#010101" d="M13.7688,16.3792l18.99,16.3797H19.9399L0,16.3792L19.9399,0h12.8189L13.7688,16.3792z"/>
+			</symbol>
+			<symbol id="shape-previous" class="shape">
+				<path fill="#010101" d="M13.7688,16.3792l18.99,16.3797H19.9399L0,16.3792L19.9399,0h12.8189L13.7688,16.3792z"/>
+			</symbol>
+			<symbol id="shape-next" class="shape">
+				<path fill="#000000" d="M0,0l12.8189,0l19.9399,16.3792L12.8189,32.7588H0l18.99-16.3797L0,0z"/>
 			</symbol>
 		</defs>
 	</svg>
@@ -27,7 +33,10 @@
 				 	<svg viewBox="0 0 32.7588 32.7588" class="icon"><use xlink:href="#shape-previous"></use></svg>
 					Gen. 1
 				</a>
-				<a class="nextnav" href="javascript:void(0);" onclick="getScripture('?book=gen&amp;chap=3&amp;verses=&amp;jst=', true)">Gen. 3 <img src="right.png"></a>
+				<a class="nextnav" href="javascript:void(0);" onclick="getScripture('?book=gen&amp;chap=3&amp;verses=&amp;jst=', true)">
+					Gen. 3
+					<svg viewBox="0 0 32.7588 32.7588" class="icon"><use xlink:href="#shape-next"></use></svg>
+				</a>
 			</nav>
 			<div class="navheading">CHAPTER 2</div>
 			<ul class="versesblock">
@@ -57,11 +66,16 @@
 				<li id="gen_2.24"><span class="verse">24</span> Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.</li>
 				<li id="gen_2.25"><span class="verse">25</span> And they were both naked, the man and his wife, and were not ashamed.</li>
 			</ul>
-			<div class="bottomnavlinks">
-				<div class="navspace">&nbsp;</div>
-				<div class="navheading"></div>
-				<div class="navlinks"><a class="prevnav" href="javascript:void(0);" onclick="getScripture('?book=gen&amp;chap=1&amp;verses=&amp;jst=', false)"><img src="left.png"> Gen. 1</a><a class="nextnav" href="javascript:void(0);" onclick="getScripture('?book=gen&amp;chap=3&amp;verses=&amp;jst=', true)">Gen. 3 <img src="right.png"></a></div>
-			</div>
+			<nav class="navlinks">
+				<a class="prevnav" href="javascript:void(0);" onclick="getScripture('?book=gen&amp;chap=1&amp;verses=&amp;jst=', false)">
+				 	<svg viewBox="0 0 32.7588 32.7588" class="icon"><use xlink:href="#shape-previous"></use></svg>
+					Gen. 1
+				</a>
+				<a class="nextnav" href="javascript:void(0);" onclick="getScripture('?book=gen&amp;chap=3&amp;verses=&amp;jst=', true)">
+					Gen. 3
+					<svg viewBox="0 0 32.7588 32.7588" class="icon"><use xlink:href="#shape-next"></use></svg>
+				</a>
+			</nav>
 		</div>
 	</section>
 	<section id="map"></section>
