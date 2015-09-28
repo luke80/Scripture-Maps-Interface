@@ -28,6 +28,7 @@ section {
   left: 0;
   height: auto;
   min-height: auto;
+  width: calc(100% - 10vw);
   background-color: white;
   font-size: 2.8vw;
   padding: 2.5vw 5vw;
@@ -51,27 +52,27 @@ section {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10000);
   opacity: 100;
 }
-/* line 37, ../../src/sass/styles.scss */
+/* line 38, ../../src/sass/styles.scss */
 #scriptures .chapterheading {
   -moz-column-span: all;
   -webkit-column-span: all;
   column-span: all;
 }
-/* line 40, ../../src/sass/styles.scss */
+/* line 41, ../../src/sass/styles.scss */
 #scriptures .big {
   font-size: 1.75em;
 }
-/* line 43, ../../src/sass/styles.scss */
+/* line 44, ../../src/sass/styles.scss */
 #scriptures .navheading, #scriptures .chapterheading {
   text-align: center;
   text-transform: uppercase;
 }
-/* line 47, ../../src/sass/styles.scss */
+/* line 48, ../../src/sass/styles.scss */
 #scriptures ul {
   margin: 0;
   padding: 0;
 }
-/* line 50, ../../src/sass/styles.scss */
+/* line 51, ../../src/sass/styles.scss */
 #scriptures ul li {
   text-align: justify;
   text-indent: 0.5em;
@@ -79,19 +80,19 @@ section {
   -webkit-column-break-inside: avoid;
   break-inside: avoid;
 }
-/* line 63, ../../src/sass/styles.scss */
+/* line 64, ../../src/sass/styles.scss */
 #scriptures.hidden {
   z-index: -1;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 
-/* line 69, ../../src/sass/styles.scss */
+/* line 70, ../../src/sass/styles.scss */
 #map {
   height: 100%;
   width: 100%;
 }
-/* line 72, ../../src/sass/styles.scss */
+/* line 73, ../../src/sass/styles.scss */
 #map .animate-label {
   position: absolute;
   top: 50vh;
@@ -107,7 +108,7 @@ section {
   opacity: 0;
 }
 
-/* line 84, ../../src/sass/styles.scss */
+/* line 85, ../../src/sass/styles.scss */
 ul.versesblock li {
   position: relative;
   display: block;
