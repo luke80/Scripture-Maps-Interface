@@ -47,55 +47,54 @@ var styleDefault = [
 		]
 	}
 ];
-var styleNoCountryBoundaries = $.extend(true,[],styleDefault);
-styleNoCountryBoundaries.push({
+var styleNoCountryBoundaries = [{
 	featureType: "administrative.country",
 	elementType: "geometry",
 	stylers: [
 		{ visibility: "off" }
 	]
-});
-styleNoCountryBoundaries.push({
+},{
 	featureType: "administrative.province",
 	elementType: "geometry",
 	stylers: [
 		{ visibility: "off" }
 	]
-});
+}].concat(styleDefault);
 
 var ModifyBoundarySetting = function( controlDiv, map ) {
 	// Set CSS for the control border.
-	var controlUI = document.createElement('div');
-	controlUI.style.backgroundColor = '#fff';
-	controlUI.style.border = '2px solid #fff';
-	controlUI.style.borderRadius = '3px';
-	controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
-	controlUI.style.cursor = 'pointer';
-	controlUI.style.marginBottom = '22px';
-	controlUI.style.textAlign = 'center';
-	controlUI.title = 'Click to toggle boundaries on the map';
-	controlDiv.appendChild(controlUI);
-
+	var controlUI = $('<div></div>').css("backgroundColor", '#fff')
+		.css("border", '2px solid #fff').css("borderRadius", '3px').css("boxShadow", '0 2px 6px rgba(0,0,0,.3)')
+		.css("cursor", 'pointer').css("margin", '10px').css("textAlign", 'center')
+		.attr("title", 'Click to toggle boundaries on the map');
+	$(controlDiv).append(controlUI);
 	// Set CSS for the control interior.
-	var controlText = document.createElement('div');
-	controlText.innerHTML = 'Toggle Boundaries';
-	controlText.style.fontSize = '11px';
-	controlText.style.paddingLeft = '5px';
-	controlText.style.paddingRight = '5px';
-	controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-	/*
-	controlText.style.color = 'rgb(25,25,25)';
-	controlText.style.lineHeight = '38px';
-	*/
-	
-	controlUI.appendChild(controlText);
-	
+	var controlText = $('<div></div>').html('Toggle Boundaries').css("font-size", '11px')
+		.css("padding", '5px').css("font-family", 'Roboto,Arial,sans-serif');
+	controlUI.append(controlText);
 	// Setup the click event listeners: simply set the map to Chicago.
-	controlUI.addEventListener('click', function() {
+	controlUI.on('click', function() {
+		//console.log("removing boundaries? ",(map.styles.indexOf(styleNoCountryBoundaries[0]) == -1));
 		if(map.styles.indexOf(styleNoCountryBoundaries[0]) == -1)
 			map.setOptions({styles: styleNoCountryBoundaries});
 		else
 			map.setOptions({styles: styleDefault});
+	});
+};
+var ReturnToScriptures = function( controlDiv, map ) {
+	// Set CSS for the control border.
+	var controlUI = $('<div></div>').css("backgroundColor", '#fff')
+		.css("border", '2px solid #fff').css("borderRadius", '3px').css("boxShadow", '0 2px 6px rgba(0,0,0,.3)')
+		.css("cursor", 'pointer').css("margin", '10px').css("textAlign", 'center')
+		.attr("title", 'Click to return to the scriptures');
+	$(controlDiv).append(controlUI);
+	// Set CSS for the control interior.
+	var controlText = $('<div></div>').html('Return to scriptures').css("font-size", '11px')
+		.css("padding", '5px').css("font-family", 'Roboto,Arial,sans-serif');
+	controlUI.append(controlText);
+	// Setup the click event listeners: simply set the map to Chicago.
+	controlUI.on('click', function() {
+		$("#scriptures").removeClass("hidden");
 	});
 };
 var map
@@ -125,11 +124,15 @@ var initMap = function() {
 	map.setOptions({styles: styleDefault});
 	//map.setTilt(45);
 	
-	// Create the DIV to hold the control and call the CenterControl() constructor
-	// passing in this DIV.
 	var boundaryControlDiv = document.createElement('div');
 	var boundaryControl = new ModifyBoundarySetting(boundaryControlDiv, map);
 	boundaryControlDiv.index = 1;
 	map.controls[google.maps.ControlPosition.TOP_RIGHT].push(boundaryControlDiv);
+	
+	var returnControlDiv = document.createElement('div');
+	var returnControl = new ReturnToScriptures(returnControlDiv, map);
+	returnControlDiv.index = 1;
+	map.controls[google.maps.ControlPosition.TOP_RIGHT].push(returnControlDiv);
+	
 };
 window.initMap = initMap;
